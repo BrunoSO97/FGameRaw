@@ -13,8 +13,8 @@ pygame.display.set_caption("FGame")
 game_speed = 5
 
 # Imagens
-player_img = pygame.transform.scale(pygame.image.load("AI/FGame/player.png"), (50,50))
-rec_img = pygame.image.load("AI/FGame/retangulo.png")
+player_img = pygame.transform.scale(pygame.image.load("player.png"), (50,50))
+rec_img = pygame.image.load("retangulo.png")
 
 class Player():
 
@@ -130,7 +130,7 @@ def main():
                 bar.vel = speed
                 bar.move()
                 if bar.collide(plr):
-                    run = False
+                    game_over = True
 
                 if bar.x_pos + bar.img.get_width() < 0:
                     rem.append(bar)
@@ -155,11 +155,4 @@ def main():
 
 
 
-#main()
-
-def run():
-    pass
-
-if __name__ == "__main__":
-    local_dir = os.path.dirname(__file__)
-    print("LOcal", local_dir)
+main()
